@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     
+    <style>
+        
+        body {
+            background-image: url('prisonmap.jpg');    
+            background-repeat: no-repeat;
+        }
+
+        #blob {    
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        background: rgb(163, 164, 165);
+        border-radius: none;
+        }
+
+        #gps_ring {
+            border: 3px solid #999;
+            -webkit-border-radius: 30px;
+            height: 18px;
+            width: 18px;
+            position: absolute;
+            border-color: red;
+            -webkit-animation: pulsate 1s ease-out;
+            -webkit-animation-iteration-count: infinite; 
+            opacity: 0.0
+        }
+        @-webkit-keyframes pulsate {
+            0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+            50% {opacity: 1.0;}
+            100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+        }
+    </style>
+    
+</head>
+<body>
+    
+    
+    <script>
+        
+        var person = [{
+                id: "P123",
+                x: 100,
+                y: -100,
+            },
+            {
+                id: "P456",
+                x: 50,
+                y: -50,
+            }];
+
+        function placeDiv(person) {
+            
+            x=person.x+100;
+            y=100-person.y;
+            console.log(person.x,person.y)
+            var elem = document.createElement('div');
+            elem.setAttribute("id","gps_ring");
+            elem.style.top = y+'px';
+            elem.style.left = x+'px';
+            document.body.appendChild(elem);        
+
+            var b = document.createElement('div');
+            b.setAttribute("id","blob");
+            b.style.left = x+25+'px';
+            b.style.top = y+'px';
+            b.textContent=person.id;
+            document.body.appendChild(b);     
+            
+        }
+
+        for(var i=0; i< person.length;i++) {
+            placeDiv(person[i]);
+        }
+        
+
+       
+    </script>
+</body>
+</html>
