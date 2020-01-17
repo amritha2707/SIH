@@ -10,7 +10,7 @@
             background-repeat: no-repeat;
         }
 
-        #blob {    
+        .blob {    
         position: absolute;
         width: 50px;
         height: 25px;
@@ -18,7 +18,7 @@
         border-radius: none;
         }
 
-        #gps_ring {
+        .gps_ring {
             border: 3px solid #999;
             -webkit-border-radius: 30px;
             height: 18px;
@@ -57,15 +57,27 @@
             
             x=person.x+100;
             y=100-person.y;
-            console.log(person.x,person.y)
+
+            if(document.getElementById('blob'+person.id)!= null) {
+            	var blob=document.getElementById('blob'+person.id);
+            	var elem=document.getElementById('elem'+person.id);
+            	elem.style.top = y+'px';
+            	elem.style.left = x+'px';
+            	blob.style.left = x+25+'px';
+            	blob.style.top = y+'px';
+            	return;
+            }
+            // console.log(person.x,person.y)
             var elem = document.createElement('div');
-            elem.setAttribute("id","gps_ring");
+            elem.setAttribute("class","gps_ring");
+            elem.setAttribute("id",'elem'+person.id);
             elem.style.top = y+'px';
             elem.style.left = x+'px';
             document.body.appendChild(elem);        
 
             var b = document.createElement('div');
-            b.setAttribute("id","blob");
+            b.setAttribute("class","blob");
+            b.setAttribute("id",'blob'+person.id);
             b.style.left = x+25+'px';
             b.style.top = y+'px';
             b.textContent=person.id;
