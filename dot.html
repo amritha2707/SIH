@@ -34,7 +34,8 @@
             50% {opacity: 1.0;}
             100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
         }
-         #pulser {
+
+        #pulser {
                 position: absolute;
                 width: 100%;
                 height: 100%;
@@ -56,27 +57,69 @@
     
 </head>
 <body>
-    
+    <div id="cella" style="position: absolute;left: 80px;top: 95px; width: 100px; height: 150px; border: 1px solid;"></div>
+    <div id="tele" style="position: absolute;left: 80px;top: 545px; width: 100px; height: 150px; border: 1px solid;"></div>
+    <div id="canteen" style="position: absolute;left: 1130px;top: 315px; width: 100px; height: 150px; border: 1px solid;"></div>
+
     
     <script>
         
         var person = [{
-                id: "P123",
+                id: "_P123",
                 x: 100,
                 y: -100,
             },
             {
-                id: "P456",
-                x: 50,
-                y: -50,
+                id: "_P234",
+                x: 900,
+                y: -300,
+            },
+            {
+                id: "_P456",
+                x: 100,
+                y: -500,
             }];
 
         function placeDiv(person) {
             
-            x=person.x+100;
-            y=100-person.y;
+            for(var i=0; i< person.length;i++) {
+            x=person[i].x + 100;
+            y=100 - person[i].y;
 
-            if(document.getElementById('blob'+person.id)!= null) {
+            
+            if(x==200 && y==200) {
+                cella.innerHTML+= person[i].id;
+                var elem = document.createElement('div');
+                elem.setAttribute("class","gps_ring");
+                elem.setAttribute("id",'elem'+person.id);
+                elem.style.top = y+'px';
+                elem.style.left = x+'px';
+                document.body.appendChild(elem);        
+            }
+
+            if(x==200 && y==600) {
+                tele.innerHTML += person[i].id;
+                var elem = document.createElement('div');
+                elem.setAttribute("class","gps_ring");
+                elem.setAttribute("id",'elem'+person.id);
+                elem.style.top = y+'px';
+                elem.style.left = x+'px';
+                document.body.appendChild(elem);     
+            }
+
+            if(x==1000 && y==400) {
+                canteen.innerHTML += person[i].id;
+                var elem = document.createElement('div');
+                elem.setAttribute("class","gps_ring");
+                elem.setAttribute("id",'elem'+person.id);
+                elem.style.top = y+'px';
+                elem.style.left = x+'px';
+                document.body.appendChild(elem);     
+            }
+
+            }
+
+           /* if(document.getElementById('blob'+person.id)!= null) {
             	var blob=document.getElementById('blob'+person.id);
             	var elem=document.getElementById('elem'+person.id);
             	elem.style.top = y+'px';
@@ -99,29 +142,32 @@
             b.style.left = x+25+'px';
             b.style.top = y+'px';
             b.textContent=person.id;
-            document.body.appendChild(b);     
+            document.body.appendChild(b);   */  
             
         }
 
-        for(var i=0; i< person.length;i++) {
-            placeDiv(person[i]);
-        }
-         
-        //when prisoner escapes
-        var p = document.createElement('div');
-        p.setAttribute("id","pulser");
-        p.textContent="DANGER DANGER! PRISONER XYZ ESCAPING!"; //XYZ replace with prsioner id
-        var but = document.createElement("button");
-        but.innerHTML="CAUGHT HIM? THEN PRESS HERE";
-                
-        document.body.appendChild(but);
-        document.body.appendChild(p);
-                
-        but.setAttribute("onClick","document.body.removeChild(p);document.body.removeChild(but);");
-                
         
+            placeDiv(person);
+        
+        
+        /*when prisoner escapes
+        var p = document.createElement('div');
+                p.setAttribute("id","pulser");
+                p.textContent="DANGER DANGER! PRISONER XYZ ESCAPING!"; //XYZ replace with prsioner id
+                var but = document.createElement("button");
+                but.innerHTML="CAUGHT HIM? THEN PRESS HERE";
+                
+                document.body.appendChild(but);
+                document.body.appendChild(p);
+                
+                but.setAttribute("onClick","document.body.removeChild(p);document.body.removeChild(but);");
+                */
 
        
     </script>
+    <div id="cella" style="position: absolute;left: 80px;top: 95px; width: 100px; height: 150px; border: 1px solid;"></div>
+    <div id="tele" style="position: absolute;left: 80px;top: 545px; width: 100px; height: 150px; border: 1px solid;"></div>
+    <div id="canteen" style="position: absolute;left: 1130px;top: 315px; width: 100px; height: 150px; border: 1px solid;"></div>
+
 </body>
 </html>
