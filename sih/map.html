@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Prison Console</title>
+    <link rel="stylesheet" type="text/css" href="dot.css">
+</head>
+<body>
+    <div class="nav">
+        <a>PRISON < BR > </a>
+            <input type="text" id="Search" placeholder="Search">
+            <button type="text" onclick="searchPrisoner()">Submit</button>
+    </div> 
+    <div id="bg">
+        <img style="width: 100%; height: 100%" src="prisonmapdot.jpg">
+    </div>
+    <div id="cella" class="ae" style="position: absolute;left: 150px;top: 150px; width: 100px; height: 150px; border: 1px solid;font-size: 30px;color: white;"></div>
+    <div id="cellb" class="ae" style="position: absolute;right:350px;top: 150px; width: 100px; height: 150px; border: 1px solid;font-size: 30px;color: white;"></div>
+    <div id="cellc" class="ae" style="position: absolute;left: 150px;top: 350px; width: 100px; height: 150px; border: 1px solid;font-size: 30px;color: white;"></div>
+    <div id="canteen" class="ae" style="position: absolute;right: 75px;top: 350px; width: 100px; height: 150px; border: 1px solid;font-size: 30px;color: white;"></div>
+    <div id="telephone" class="ae" style="position: absolute;right: 350px;top: 555px; width: 100px; height: 150px; border: 1px solid;font-size: 30px;color: white;"></div>
+    <div class="listofprisoners" style="top: 125px">
+      
+            <marquee class="marq" direction="right" style="color:#f1f1f1;height:120px;position: absolute;overflow: hidden" onmouseover="this.stop();" onmouseout="this.start();">
+                <ul id = "list">
+                <li>ID:P123<br>
+                    Name:onetwothree<br>
+                    guard:lee<br>
+                    dest:telephone<br>
+                    src:cellA</li>
+                    
+                <li >An unknown person <br>attempted to access <br>Control Room </li>
+                <li> Harini Raa has <br> been given access <br> to Control Room </li>
+
+                 <li>ID:P323<br>
+                    Name:threetwothree<br>
+                    guard:han<br>
+                    dest:telephone<br>
+                    src:cellB</li> 
+
+                <li>ID:P323<br>
+                    Name:threetwothree<br>
+                    guard:han<br>
+                    dest:telephone<br>
+                    src:cellB</li>
+                    <li>ID:P456<br>
+                    Name:threetwothree<br>
+                    guard:han<br>
+                    dest:telephone<br>
+                    src:cellB</li>
+     
+            </ul>
+            
+            </marquee>
+      
+        
+        </div>
+
+    
+        <script src="dot.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,162 @@
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	
+}
+
+
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+
+
+
+
+.nav {
+            background-color: rgba(32, 32, 32, 0.952);
+            overflow: hidden;
+            height: 28px;
+        }
+        .nav a {
+            text-align: center;
+            font-size: 19px;
+            color: white;
+            padding: 10px;
+            font-family: Georgia;
+        }
+        
+
+.txt1 {
+  font-family: Montserrat-Medium;
+  font-size: 16px;
+  color: black;
+  line-height: 1.5;
+}
+
+
+
+
+/*login*/
+
+body {
+  background: black;
+}
+
+
+.wraplogin {
+  top: 20%;
+  width: 650px;
+  background: #fff;
+  left: 30%;
+  border-radius: 10px;
+  position: absolute;
+  padding: 40px;
+}
+
+
+/*Form*/
+
+.logintitle {
+  width: 100%;
+  display: block;
+  font-family: Montserrat;
+  font-size: 39px;
+  color: #555555;
+  text-align: center;
+  padding-bottom: 10px; 
+}
+
+/*Input*/
+
+.wrapinput {
+  width: 100%;
+  position: relative;
+  background-color: #f7f7f7;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+}
+
+
+.input {
+  font-family: Poppins-Regular;
+  color: #333333;
+  line-height: 1.2;
+  font-size: 18px;
+
+  display: block;
+  width: 100%;
+  background: transparent;
+  height: 60px;
+  padding: 0 20px;
+}
+
+
+/*button*/
+.loginbtn {
+  border: none;
+  background: transparent;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 100%;
+  height: 60px;
+  background-color: #333333;
+  border-radius: 10px;
+
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+.loginbtn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: black;
+
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+.loginbtn:hover {
+ cursor: pointer; 
+}
+.loginbtn:hover:before {
+  opacity: 1;
+}
+
+

@@ -1,0 +1,154 @@
+.nav {
+            background-color: rgba(32, 32, 32, 0.952);
+            overflow: hidden;
+            height: 28px;
+        }
+        .nav a {
+            text-align: center;
+            font-size: 19px;
+            color: white;
+            padding: 10px;
+            font-family: Georgia;
+        }
+        .nav input[type=text] {
+            margin-right: 0;
+            padding: 5px 10px 10px 10px;
+            font-size: 15px;
+            border: none;
+            
+        }
+        .nav button[type=submit] {
+
+            height: 29px;
+            width: 60px;
+            background: grey;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .nav button[type=submit] , .nav input[type=text] {
+            display: inline-block;
+            position: relative;
+        }
+        body {
+            background-color: black;
+        }
+        #bg {
+            background-repeat: no-repeat;   
+            display: block;
+            position: absolute;   
+        }
+
+        .blob {    
+        position: absolute;
+        width: 50px;
+        height: 25px;
+        background: rgb(163, 164, 165);
+        border-radius: none;
+        }
+
+        .gps_ring {
+            border: 3px solid #999;
+            -webkit-border-radius: 30px;
+            height: 18px;
+            width: 18px;
+            position: absolute;
+            border-color: red;
+            -webkit-animation: pulsate 1s ease-out;
+            -webkit-animation-iteration-count: infinite; 
+            opacity: 0.0
+        }
+        .gps_ring_search {
+            border: 3px solid #999;
+            -webkit-border-radius: 30px;
+            height: 18px;
+            width: 18px;
+            position: absolute;
+            border-color: green;
+            -webkit-animation: pulsate 1s ease-out;
+            -webkit-animation-iteration-count: infinite; 
+            opacity: 0.0
+        }
+        @-webkit-keyframes pulsate {
+            0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+            50% {opacity: 1.0;}
+            100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+        }
+
+        #pulser {
+                position: absolute;
+                top:0;
+                width: 100%;
+                height: 100%;
+                background: red;
+                animation-name: pulser;
+                animation-duration: 0.5s;
+                animation-iteration-count: infinite;
+                animation-direction: alternate;
+                -webkit-transition: width 2s; /* For Safari 3.1 to 6.0 */
+                transition: width 2s;
+            }
+            @keyframes pulser {
+                0%   {background-color: rgba(255, 0, 0, 0.699);}
+                49%   {background-color: rgba(255, 0, 0, 0.699);}
+                50%   {background-color: rgba(255, 255, 255, 0.466)}
+                100%   {background-color: rgba(255, 255, 255, 0.466);}
+            }
+            #msg {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+                width: 600px;
+                padding: 50px;
+                border-radius: 25px;
+                border: 2px solid black;
+                background: grey;
+                opacity: 1;
+                transition: 0.5s;
+                text-align: center;
+                font-size: 50px;
+            }
+            #dismissAlert {  
+                position: fixed;
+                width: 150px;
+                height: 40px;
+                top: 460px;
+                left: 60%;
+                color: white;
+                background-color: black;
+                border-radius: 10px;
+                border: none;
+                text-align: center;
+                font-size: xx-small;
+                cursor: pointer;
+            }
+
+            .listofprisoners {
+                position: absolute; 
+                width: 550px; /* Full width (cover the whole page) */
+                height: 150px; /* Full height (cover the whole page) */
+                left: 0px;
+                top:65px;
+                margin-top:440px;
+                /*border: none;*/
+                border-left-width: 5px;
+                border-left-color: white;
+                scroll-behavior: smooth;
+                overflow: hidden;
+                background-color: rgba(0, 0, 0, 0.952);
+                z-index: 0; /* Specify a stack order in case you're using a different order for other elements */
+                cursor: pointer;
+                overflow-y: scroll; 
+                
+            }
+
+            li{
+                display: inline;
+                float: left;
+                padding: 16px;
+            }
+            ul li:hover, ul li:focus {
+                color: red;
+            }
